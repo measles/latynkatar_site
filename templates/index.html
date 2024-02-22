@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="be">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <script src="{{ url_for('static', filename= 'script.js') }}"></script> 
+    <title>Łatynkatar</title>
+</head>
+<body>
+   <h1>Латынкатар</h1>
+   <form name="convert">
+    <div>
+        <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю"></textarea>
+        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly></textarea>
+    </div>
+    <input type="button" value="Канвертаваць" onclick="getConverted()" />
+   </form>
+</body>
+</html>

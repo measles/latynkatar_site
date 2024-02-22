@@ -1,0 +1,22 @@
+h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
+textarea{
+    border: 2px #eee solid;
+    color: black;
+    text-align: justify;
+    height: 40em;
+    min-height: 40em;
+    max-height: 40em;
+    width: 50em;
+    padding: 10px;
+    font-size: larger;
+    float: down;
+}
+form{
+    place-items: center;
+    text-align: center;
+}
