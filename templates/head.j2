@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="be">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <script src="{{ url_for('static', filename= 'script.js') }}"></script> 
+    <title>Łatynkatar{{ page_suffix }}</title>
+</head>
+<body>
+   <h1>{{ page_name }}</h1>
+   <div id="menu">
+    <a href="/">Галоўная</a>
+    <a href="/about/">Пра сайт</a>
+   </div>
