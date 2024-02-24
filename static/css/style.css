@@ -35,3 +35,6 @@ div#about{
     padding-left: 15em;
     width: 80em;
 }
+div#menu a#current{
+    pointer-events: none;
+}

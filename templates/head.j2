@@ -9,6 +9,7 @@
 <body>
    <h1>{{ page_name }}</h1>
    <div id="menu">
-    <a href="/">Галоўная</a>
-    <a href="/about/">Пра сайт</a>
+    <a href="/" {{ current_main }}>Галоўная</a>
+    <a href="/links/" {{ current_links }}>Спасылкі</a>
+    <a href="/about/" {{ current_about }}>Пра сайт</a>
    </div>
