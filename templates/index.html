@@ -1,9 +1,13 @@
 {% include 'head.j2' %}
    <form name="convert">
-    <div>
-        <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю"></textarea>
-        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly></textarea>
+    <div class="row">
+        <div class="col">
+            <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
+        </div>
+        <div class="col">
+            <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" disabled readonly rows="5" class="w-100"></textarea>
+        </div>
     </div>
-    <input type="button" value="Канвертаваць" onclick="getConverted()" />
+    <input type="button" class="btn  btn-primary btn-lg" value="Канвертаваць" onclick="getConverted()"/>
    </form>
 {% include 'tail.j2' %}

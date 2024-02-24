@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import json
 from latynkatar import Cyr2Lat
 
-disable_link = 'id="current"'
+ACTIVE = ' active" aria-current="page'
 
 app = Flask(__name__)
 
@@ -11,22 +11,21 @@ app = Flask(__name__)
 def index():
     page_suffix = ''
     page_name = "Латынкатар"
-    return render_template('index.html', page_name=page_name, page_suffix=page_suffix, current_main=disable_link)
+    return render_template('index.html', page_name=page_name, page_suffix=page_suffix, active_main=ACTIVE)
 
 
 @app.route("/links/")
 def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
-    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, current_links=disable_link)
+    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE)
 
 
 @app.route("/about/")
 def about():
     page_name = "Пра сайт"
     page_suffix = f" - {page_name}"
-    return render_template('about.html', page_name=page_name, page_suffix=page_suffix, current_about=disable_link)
-
+    return render_template('about.html', page_name=page_name, page_suffix=page_suffix, active_about=ACTIVE)
 
 @app.route("/convert", methods=["POST"])
 def convert():
