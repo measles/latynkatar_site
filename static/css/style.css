@@ -20,3 +20,18 @@ form{
     place-items: center;
     text-align: center;
 }
+p{
+    text-indent: 2em;
+    text-align: justify;
+}
+div#menu{
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+}
+div#about{
+    text-align: center;
+    padding-left: 15em;
+    width: 80em;
+}
