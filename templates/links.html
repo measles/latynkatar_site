@@ -1,12 +1,8 @@
 {% include 'head.j2' %}
    <h2>Праверка правапіса, даведнікі, слоўнікі</h2>
    <div class="list-group">
-      <a href="https://languagetool.org/ ">https://languagetool.org/ </a> - цэлы камбайн па праверцы правапісу розных моў, у тым ліку беларускай. Ёсць плагіны для барўзэраў. Часта ім карыстаюся.
-      <a href="https://dobrapis.belsat.eu/">https://dobrapis.belsat.eu/</a> - праверка правапісу ад БелСат (класічны і афіцыйны), канвертэр у лацінку і спіс імёнаў.
-      <a href="https://dobrapis.belsat.eu/">https://dobrapis.belsat.eu/</a> - праверка правапісу ад праекту "Беларусі N-корпус"
-      <a href="https://bnkorpus.info/grammar.be.html">https://bnkorpus.info/grammar.be.html</a> - граматычная база Корпусу. Не вычэрпны даведнік, але бывае вельмі карысным для пошука форм слова.
-      <a href="https://bnkorpus.info/korpus.be.html">https://bnkorpus.info/korpus.be.html</a> - пошук слова па корпусе беларускіх тэкстаў.
-      <a href="https://slounik.org">https://slounik.org</a> - процьма розных слоўнікаў і энцыклапедый. Але варта ўлічваць, што ў 20-30 мінулага стагоддзя было шмат эксперыментаў з мовай, так што слоўнікі таго перыяду трэба ўспрымаць з лёгкім скепсісам.
-      <a href="https://verbum.by">https://verbum.by</a> - крысны набор слоўнікаў.
+      {% for url, description in pravapis %}
+         <a href="{{ url }}">{{ url }} </a> - {{ description }} 
+      {% endfor %}
    </div>
 {% include 'tail.j2' %}
