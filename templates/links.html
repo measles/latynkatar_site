@@ -1,0 +1,40 @@
+{% include 'head.j2' %}
+   <div class="accordion" id="links">
+      <!-- Слоўнікі, даведнікі, праверка правапісу -->
+      <div class="accordion-item">
+         <h2  class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSlouniki" aria-expanded="true" aria-controls="collapseSlouniki">
+               Праверка правапісу, даведнікі, слоўнікі
+            </button>
+         </h2>
+         <div id="collapseSlouniki" class="accordion-collapse collapse show" data-bs-parent="#links">
+            <div class="accordion-body">
+               <div class="list-group">
+                  {% for url, description in pravapis %}
+                     <a href="{{ url }}">{{ url }} </a>{{ description }} 
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Слоўнікі, даведнікі, праверка правапісу -->
+      <!-- Дзе купіць кнігі -->
+      <div class="accordion-item">
+         <h2  class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKnihi" aria-expanded="true" aria-controls="collapseKnigi">
+               Выдавецтвы і кнігарні дзе можна купіць беларускія кнігі за мяжою
+            </button>
+         </h2>
+         <div id="collapseKnihi" class="accordion-collapse collapse show" data-bs-parent="#links">
+            <div class="accordion-body">
+               <div class="list-group">
+                  {% for url, description in knihi %}
+                     <a href="{{ url }}">{{ url }} </a>{{ description }} 
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Дзе купіць кнігі -->
+   </div>
+{% include 'tail.j2' %}

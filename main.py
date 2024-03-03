@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import json
 from latynkatar import Cyr2Lat
 
+import lib.links as links_data
+
 ACTIVE = ' active" aria-current="page'
 
 app = Flask(__name__)
@@ -12,6 +14,13 @@ def index():
     page_suffix = ''
     page_name = "Латынкатар"
     return render_template('index.html', page_name=page_name, page_suffix=page_suffix, active_main=ACTIVE)
+
+
+@app.route("/links/")
+def links():
+    page_name = "Спасылкі"
+    page_suffix = f" - {page_name}"
+    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, pravapis=links_data.pravapis, knihi=links_data.knihi)
 
 
 @app.route("/about/")
