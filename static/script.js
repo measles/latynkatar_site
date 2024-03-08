@@ -1,6 +1,6 @@
 function getConverted(){
-    var inputField = document.getElementById("input");
-    var outputField = document.getElementById("output");
+    let inputField = document.getElementById("input");
+    let outputField = document.getElementById("output");
     fetch('/convert', {
     method: 'POST',
     headers: {
@@ -17,4 +17,9 @@ function getConverted(){
    //.then(response => console.log(JSON.stringify(response["text"])))
     .then(response => outputField.value = response["text"])
     //document.getElementById("output").value = inputField.value;
+}
+
+function resetInput(){
+    let inputField = document.getElementById("input");
+    inputField.value = "";
 }
