@@ -6,8 +6,13 @@
                         <div class="col-9">
                             <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
                         </div>
-                        <div class="col-1">
+                        <div class="col-1 btn-group-vertical">
                             <button class="btn btn-danger btn-xxl h-25 align-items-center" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>
+                            <input type="radio" class="btn-check" name="type-radio" id="type-modern" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="type-modern">Сучасная</label>
+                            <input type="radio" class="btn-check" name="type-radio" id="type-classic" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="type-classic">Класічная</label>
+                          
                         </div>
                     </div>
                 </div>

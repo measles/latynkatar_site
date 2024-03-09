@@ -1,7 +1,17 @@
 function getConverted(){
     let inputField = document.getElementById("input");
     let outputField = document.getElementById("output");
+
+    console.log(document.querySelector("input[name=type-radio]:checked").id);
     if (inputField.value.length > 0) {
+        let type = ""
+        if (document.querySelector("input[name=type-radio]:checked").id == "type-modern") {
+            type = "modern"
+        } else {
+            type = "classic"
+        }
+        console.log
+
         fetch('/convert', {
             method: 'POST',
             headers: {
@@ -11,7 +21,7 @@ function getConverted(){
             body: JSON.stringify({
                 "text": inputField.value,
                 "direction": "latin",
-                "type": "modern"
+                "type": String(type)
             })
         })
         .then(response => response.json())
