@@ -1,13 +1,28 @@
 {% include 'head.j2' %}
-   <form name="convert">
-    <div class="row">
-        <div class="col">
-            <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
+    <form name="convert">
+        <div class="container">
+                <div class="row row-cols-2 p-3">
+                    <div class="input-group">
+                        <div class="col-9">
+                            <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-danger btn-xxl h-25 align-items-center" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-2 p-3">
+                    <div class="col-9">
+                        <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" onclick="getConverted()"/>
+                    </div>
+                </div>
+                <div class="row row-cols-2 p-3">
+                    <div class="col-9">
+                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" disabled readonly rows="5" class="w-100"></textarea>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="col">
-            <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" disabled readonly rows="5" class="w-100"></textarea>
-        </div>
-    </div>
-    <input type="button" class="btn  btn-primary btn-lg" value="Канвертаваць" onclick="getConverted()"/>
-   </form>
+    </form>
 {% include 'tail.j2' %}
