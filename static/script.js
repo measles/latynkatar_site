@@ -10,14 +10,12 @@ function getConverted(){
             },
             body: JSON.stringify({
                 "text": inputField.value,
-                "operation": "convertation",
-                "direction": "latin"
+                "direction": "latin",
+                "type": "modern"
             })
         })
         .then(response => response.json())
-        //.then(response => console.log(JSON.stringify(response["text"])))
         .then(response => outputField.value = response["text"])
-        //document.getElementById("output").value = inputField.value;
     } else {
         console.log("The input field was empty. Skipping backend request")
     }
