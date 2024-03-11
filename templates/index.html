@@ -1,42 +1,45 @@
 {% include 'head.j2' %}
-    <form name="convert">
-        <div class="container">
-                <!-- Зыходны тэкст і кнопка яго ачысткі -->
-                <div class="row row-cols-2 p-3">
-                    <div class="input-group">
-                        <div class="col-11">
-                            <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-danger btn-sm" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
-                        </div>
-                    </div>
-                </div>
-                <!-- Зыходны тэкст і кнопка яго ачысткі -->
-                <!-- Выбар тыпу лацінкі для канвертацыі -->
-                <div class="btn-group px-3" role="group">
-                    <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-modern" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary btn-sm" for="type-modern">Сучасная</label>
-                    <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-classic" autocomplete="off">
-                    <label class="btn btn-outline-primary btn-sm" for="type-classic">Класічная</label>
-                </div>
-                <!-- Выбар тыпу лацінкі для канвертацыі -->
-                <!-- Кнопка канвертацыі -->
-                <div class="row row-cols-2 p-3">
+    <script>new ClipboardJS('#clipboard-copy');</script>
+    <div class="container">
+            <!-- Зыходны тэкст і кнопка яго ачысткі -->
+            <div class="row row-cols-2 p-3">
+                <div class="input-group">
                     <div class="col-11">
-                        <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" onclick="getConverted()"/>
+                        <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-danger btn-sm" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
                     </div>
                 </div>
-                <!-- Кнопка канвертацыі -->
-                <!-- Выніковы тэкст -->
-                <div class="row row-cols-2 p-3">
-                    <div class="col-11">
-                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" disabled readonly rows="5" class="w-100"></textarea>
-                    </div>
-                </div>
-                <!-- Выніковы тэкст -->
             </div>
-
+            <!-- Зыходны тэкст і кнопка яго ачысткі -->
+            <!-- Выбар тыпу лацінкі для канвертацыі -->
+            <div class="btn-group px-3" role="group">
+                <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-modern" autocomplete="off" checked>
+                <label class="btn btn-outline-primary btn-sm" for="type-modern">Сучасная</label>
+                <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-classic" autocomplete="off">
+                <label class="btn btn-outline-primary btn-sm" for="type-classic">Класічная</label>
+            </div>
+            <!-- Выбар тыпу лацінкі для канвертацыі -->
+            <!-- Кнопка канвертацыі -->
+            <div class="row row-cols-2 p-3">
+                <div class="col-11">
+                    <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" onclick="getConverted()"/>
+                </div>
+            </div>
+            <!-- Кнопка канвертацыі -->
+            <!-- Выніковы тэкст -->
+            <div class="row row-cols-2 p-3">
+                <div class="input-group">
+                    <div class="col-11">
+                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly rows="5" class="w-100"></textarea>
+                    </div>
+                    <div class="col-1" >
+                        <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
+                    </div>
+                </div>
+            </div>
+            <!-- Выніковы тэкст -->
         </div>
-    </form>
+    </div>
 {% include 'tail.j2' %}
