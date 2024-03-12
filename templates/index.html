@@ -14,10 +14,13 @@
         <div class="row row-cols-2 p-3">
             <div class="input-group">
                 <div class="col-11">
-                    <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
+                    <div class="form-floating">
+                        <textarea id="input" title="Зыходны тэкст" placeholder="Устаўце сюды тэкст кірыліцаю" class="form-control" style="height: 200px"></textarea>
+                        <label for="input">Устаўце сюды тэкст кірыліцаю</label>
+                    </div>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-danger btn-sm" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
+                    <button class="btn btn-danger btn-sm" type="button" title="Выдаліць тэкст" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
                 </div>
             </div>
         </div>
@@ -25,15 +28,15 @@
         <!-- Выбар тыпу лацінкі для канвертацыі -->
         <div class="btn-group px-3" role="group">
             <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-modern" autocomplete="off" checked>
-            <label class="btn btn-outline-primary btn-sm" for="type-modern">Сучасная</label>
+            <label class="btn btn-outline-primary btn-sm" title="Сучасная лацінка" for="type-modern">Сучасная</label>
             <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-classic" autocomplete="off">
-            <label class="btn btn-outline-primary btn-sm" for="type-classic">Класічная</label>
+            <label class="btn btn-outline-primary btn-sm" title="Класічная лацінка" for="type-classic">Класічная</label>
         </div>
         <!-- Выбар тыпу лацінкі для канвертацыі -->
         <!-- Кнопка канвертацыі -->
         <div class="row row-cols-2 p-3">
             <div class="col-11">
-                <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" onclick="getConverted()"/>
+                <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" title="Канвертаваць" onclick="getConverted()"/>
             </div>
         </div>
         <!-- Кнопка канвертацыі -->
@@ -41,10 +44,13 @@
         <div class="row row-cols-2 p-3">
             <div class="input-group">
                 <div class="col-11">
-                    <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly rows="5" class="w-100"></textarea>
+                    <div class="form-floating">
+                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly title="Сканвертаваны тэкст" class="form-control" style="height: 200px""></textarea>
+                        <label for="output">Тут з'явіцца вынік лацінкаю</label>
+                    </div>
                 </div>
                 <div class="col-1" >
-                    <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
+                    <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" title="Зкапіяваць тэкст" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
                 </div>
             </div>
         </div>
