@@ -1,45 +1,59 @@
 {% include 'head.j2' %}
+    <!-- Падключыць падзею па капіяванні ў буфер на кнопку #clipboard-copy -->
     <script>new ClipboardJS('#clipboard-copy');</script>
+    <!-- Падключыць падзею па капіяванні ў буфер на кнопку #clipboard-copy -->
+    <!-- Стварыць апрацоўшчык клавіятурных падзей -->
+    <script>document.addEventListener('keydown', (event) => keyEvent(event), false);</script>
+    <!-- Стварыць апрацоўшчык клавіятурных падзей -->
+    <!-- Актывізаваць кнопку з даведкай -->
+    <script>document.getElementById("help").hidden = false;</script>
+    <!-- Актывізаваць кнопку з даведкай -->
+    {% include 'help.j2' %}
     <div class="container">
-            <!-- Зыходны тэкст і кнопка яго ачысткі -->
-            <div class="row row-cols-2 p-3">
-                <div class="input-group">
-                    <div class="col-11">
-                        <textarea id="input" placeholder="Устаўце сюды тэкст кірыліцаю" rows="5" class="w-100"></textarea>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-danger btn-sm" type="button" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
-                    </div>
-                </div>
-            </div>
-            <!-- Зыходны тэкст і кнопка яго ачысткі -->
-            <!-- Выбар тыпу лацінкі для канвертацыі -->
-            <div class="btn-group px-3" role="group">
-                <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-modern" autocomplete="off" checked>
-                <label class="btn btn-outline-primary btn-sm" for="type-modern">Сучасная</label>
-                <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-classic" autocomplete="off">
-                <label class="btn btn-outline-primary btn-sm" for="type-classic">Класічная</label>
-            </div>
-            <!-- Выбар тыпу лацінкі для канвертацыі -->
-            <!-- Кнопка канвертацыі -->
-            <div class="row row-cols-2 p-3">
+        <!-- Зыходны тэкст і кнопка яго ачысткі -->
+        <div class="row row-cols-2 p-3">
+            <div class="input-group">
                 <div class="col-11">
-                    <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" onclick="getConverted()"/>
-                </div>
-            </div>
-            <!-- Кнопка канвертацыі -->
-            <!-- Выніковы тэкст -->
-            <div class="row row-cols-2 p-3">
-                <div class="input-group">
-                    <div class="col-11">
-                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly rows="5" class="w-100"></textarea>
-                    </div>
-                    <div class="col-1" >
-                        <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
+                    <div class="form-floating">
+                        <textarea id="input" title="Зыходны тэкст" placeholder="Устаўце сюды тэкст кірыліцаю" class="form-control" style="height: 200px"></textarea>
+                        <label for="input">Устаўце сюды тэкст кірыліцаю</label>
                     </div>
                 </div>
+                <div class="col-1">
+                    <button class="btn btn-danger btn-sm" type="button" title="Выдаліць тэкст" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
+                </div>
             </div>
-            <!-- Выніковы тэкст -->
         </div>
+        <!-- Зыходны тэкст і кнопка яго ачысткі -->
+        <!-- Выбар тыпу лацінкі для канвертацыі -->
+        <div class="btn-group px-3" role="group">
+            <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-modern" autocomplete="off" checked>
+            <label class="btn btn-outline-primary btn-sm" title="Сучасная лацінка" for="type-modern">Сучасная</label>
+            <input type="radio" class="btn-check btn-sm" name="type-radio" id="type-classic" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" title="Класічная лацінка" for="type-classic">Класічная</label>
+        </div>
+        <!-- Выбар тыпу лацінкі для канвертацыі -->
+        <!-- Кнопка канвертацыі -->
+        <div class="row row-cols-2 p-3">
+            <div class="col-11">
+                <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" title="Канвертаваць" onclick="getConverted()"/>
+            </div>
+        </div>
+        <!-- Кнопка канвертацыі -->
+        <!-- Выніковы тэкст -->
+        <div class="row row-cols-2 p-3">
+            <div class="input-group">
+                <div class="col-11">
+                    <div class="form-floating">
+                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly title="Сканвертаваны тэкст" class="form-control" style="height: 200px""></textarea>
+                        <label for="output">Тут з'явіцца вынік лацінкаю</label>
+                    </div>
+                </div>
+                <div class="col-1" >
+                    <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" title="Зкапіяваць тэкст" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
+                </div>
+            </div>
+        </div>
+        <!-- Выніковы тэкст -->
     </div>
 {% include 'tail.j2' %}

@@ -10,7 +10,6 @@ function getConverted(){
         } else {
             type = "classic"
         }
-        console.log
 
         fetch('/convert', {
             method: 'POST',
@@ -21,7 +20,7 @@ function getConverted(){
             body: JSON.stringify({
                 "text": inputField.value,
                 "direction": "latin",
-                "type": String(type)
+                "type": type
             })
         })
         .then(response => response.json())
@@ -34,4 +33,30 @@ function getConverted(){
 function resetInput(){
     let inputField = document.getElementById("input");
     inputField.value = "";
+}
+
+function keyEvent(event){
+    let modernButton = document.getElementById("type-modern");
+    let classicButton = document.getElementById("type-classic");
+
+    if (event.ctrlKey) {
+        if (event.key=="Enter") {
+            getConverted();
+        } else if (event.code == "Digit1") {
+            modernButton.checked = true;
+        } else if (event.code == "Digit2") {
+            classicButton.checked = true;
+        } else if (event.code = "Delete") {
+            resetInput();
+        }
+    }
+    if (event.code == "F1") {
+        showHelp();
+    }
+}
+
+function showHelp(){
+    const helpToast = document.getElementById("helpToast")
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(helpToast)
+    toastBootstrap.show()
 }

@@ -27,8 +27,9 @@
     <h1 class='text-center'>{{ page_name }}</h1>
     <!-- Верхняе меню -->
     <nav class="nav navbar nav-pills bg-body-tertiary justify-content-center">
-    <a href="/" class="nav-link{{ active_main}}" >Галоўная</a>
-    <a href="/links/" class="nav-link{{ active_links}}" >Спасылкі</a>
-    <a href="/about/" class="nav-link{{ active_about }}">Пра сайт</a>
+        <button class="btn btn-outline-primary rounded-circle navbar-brand" type="button" id="help" hidden title="Даведка" onClick="showHelp()"><i class="fa fa-info"></i></button>
+        <a href="/" class="nav-link{{ active_main}}" >Галоўная</a>
+        <a href="/links/" class="nav-link{{ active_links}}" >Спасылкі</a>
+        <a href="/about/" class="nav-link{{ active_about }}">Пра сайт</a>
     </nav>
     <!-- Верхняе меню -->
