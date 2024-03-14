@@ -46,7 +46,7 @@ function keyEvent(event){
             modernButton.checked = true;
         } else if (event.code == "Digit2") {
             classicButton.checked = true;
-        } else if (event.code = "Delete") {
+        } else if (event.code == "Delete") {
             resetInput();
         }
     }
