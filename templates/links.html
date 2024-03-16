@@ -11,7 +11,7 @@
             <div id="collapseSlouniki" class="accordion-collapse collapse show" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in pravapis %}
+                     {% for url, description in data.pravapis %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
@@ -29,7 +29,7 @@
             <div id="collapseKnihi" class="accordion-collapse collapse show" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in knihi %}
+                     {% for url, description in data.knihi %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>

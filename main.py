@@ -42,23 +42,34 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    page_suffix = ''
-    page_name = "Латынкатар"
-    return render_template('index.html', page_name=page_name, page_suffix=page_suffix, active_main=ACTIVE)
+    data = {
+        "page_name": "Латынкатар",
+        "page_suffix": '',
+        "page": "main",
+    }
+    return render_template('index.html', data=data)
 
 
 @app.route("/links/")
 def links():
-    page_name = "Спасылкі"
-    page_suffix = f" - {page_name}"
-    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, pravapis=links_data.pravapis, knihi=links_data.knihi)
+    data = {
+        "page_name": "Спасылкі",
+        "page_suffix": " - Спасылкі",
+        "page": "links",
+        "pravapis": links_data.pravapis,
+        "knihi": links_data.pravapis,
+    }
+    return render_template('links.html', data=data)
 
 
 @app.route("/about/")
 def about():
-    page_name = "Пра сайт"
-    page_suffix = f" - {page_name}"
-    return render_template('about.html', page_name=page_name, page_suffix=page_suffix, active_about=ACTIVE)
+    data = {
+        "page_name": "Пра сайт",
+        "page_suffix": " - Пра сайт",
+        "page": "about",
+    }
+    return render_template('about.html', data=data)
 
 @app.route("/convert", methods=["POST"]) 
 @app.route("/convert/", methods=["POST"])
