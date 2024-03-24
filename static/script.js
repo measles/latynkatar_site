@@ -81,12 +81,16 @@ function keyEvent(event){
         }
     }
     if (event.code == "F1") {
-        showHelp();
+        showHideHelp();
     }
 }
 
-function showHelp(){
+function showHideHelp(){
     const helpToast = document.getElementById("helpToast")
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(helpToast)
-    toastBootstrap.show()
+    if (helpToast.checkVisibility()) {
+        toastBootstrap.hide()
+    } else {
+        toastBootstrap.show()
+    }
 }
