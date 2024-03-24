@@ -1,0 +1,118 @@
+# Translations template for Łatynkatar.
+# Copyright (C) 2024 Andrej Zacharevicz
+# This file is distributed under the same license as the Latynkatar's site.
+# Andrej Zacharevicz <zahar.by@gmail.com>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: zahar.by@gmail.com\n"
+"POT-Creation-Date: 2024-03-17 10:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: main.py:57
+msgid "Латынкатар"
+msgstr ""
+
+#: main.py:66 templates/head.j2:66
+msgid "Спасылкі"
+msgstr ""
+
+#: main.py:79 templates/head.j2:67
+msgid "Пра сайт"
+msgstr ""
+
+#: templates/about.html:4
+msgid ""
+"Гэтая старонка з анлайн канвертэрам беларускага тэксту з кірыліцы ў "
+"лацінку — невялікі ўзор ўжывання маёй бібліятэкі \n"
+"        <a href=\"https://pypi.org/project/latynkatar/\" >latynkatar</a>,"
+" якая даступная на PyPi пад ліцэнзіяй \n"
+"        <a href=\"https://github.com/measles/latynkatar?tab=LGPL-3.0-1"
+"-ov-file\">LGPLv3</a>. Бібліятэка робіць вельмі простую \n"
+"        канвертацыю тэксту да лацінкі  як сучаснай (з v, ž, č і š), так і"
+" класічнай (з w, ż, cz, sz) згодна з простымі правіламі,\n"
+"        пакідаючы ўсё апроч кірылічных літар нязменным. Ніякіх дадатковых"
+" дзеянняў з тэкстам не здзяйсняецца, так што правапіс\n"
+"        застаецца роўна такім, які быў да канвертацыі. Зыходнікі старонкі"
+" даступныя <a href=\"https://github.com/measles/latynkatar_site\">тут</a>"
+"\n"
+"        пад ліцэнзіяй <a "
+"href=\"https://github.com/measles/latynkatar_site/blob/main/LICENSE\">BSD</a>."
+msgstr ""
+
+#: templates/about.html:13 templates/help.j2:10
+msgid "Канвертар падтрымлівае кіраванне кнопкамі:"
+msgstr ""
+
+#: templates/about.html:16 templates/help.j2:12
+msgid "каб паказаць даведку"
+msgstr ""
+
+#: templates/about.html:17 templates/help.j2:13
+msgid "каб пераключыцца на сучасную лацінку"
+msgstr ""
+
+#: templates/about.html:18 templates/help.j2:14
+msgid "каб пераключыцца на класічную лацінку"
+msgstr ""
+
+#: templates/about.html:19 templates/help.j2:15
+msgid "каб здзейсніць канвертацыю"
+msgstr ""
+
+#: templates/about.html:20 templates/help.j2:16
+msgid "каб ачысціць поле ўводу тэксту"
+msgstr ""
+
+#: templates/about.html:23
+msgid ""
+"Калі вы заўважылі памылку — пакіньце, калі ласка, справаздачу пра тое што"
+" адбылося <a "
+"href=\"https://github.com/measles/latynkatar_site/issues\">тут</a>, "
+"стварыўшы новую задачу. Там жа можна стварыць запыт на новыя функцыі."
+msgstr ""
+
+#: templates/about.html:25
+msgid "Старонка разгорнутая з дапамогай App Platform ад DigitalOcean."
+msgstr ""
+
+#: templates/head.j2:65
+msgid "Галоўная"
+msgstr ""
+
+#: templates/help.j2:6
+msgid "Кіраванне кнопкамі"
+msgstr ""
+
+#: templates/index.html:39
+msgid "Канвертаваць"
+msgstr ""
+
+#: templates/index.html:48 templates/index.html:49
+msgid "Тут з'явіцца вынік лацінкаю"
+msgstr ""
+
+#: templates/index.html:48
+msgid "Сканвертаваны тэкст"
+msgstr ""
+
+#: templates/index.html:53
+msgid "Зкапіяваць тэкст"
+msgstr ""
+
+#: templates/links.html:8
+msgid "Праверка правапісу, даведнікі, слоўнікі"
+msgstr ""
+
+#: templates/links.html:26
+msgid "Выдавецтвы і кнігарні дзе можна купіць беларускія кнігі за мяжою"
+msgstr ""
+
