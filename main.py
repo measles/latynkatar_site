@@ -29,21 +29,32 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
+from pydoc import pager
 from flask import Flask, render_template, request
+from flask_babel import Babel, lazy_gettext
 import json
 from latynkatar import Cyr2Lat
+from config import Config
 
 import lib.links as links_data
 
 ACTIVE = ' active" aria-current="page'
 
+
+def get_locale():
+    print(app.config)
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
+
+
 app = Flask(__name__)
+app.config.from_object(Config)
+babel = Babel(app, locale_selector=get_locale)
 
 
 @app.route('/')
 def index():
     data = {
-        "page_name": "Латынкатар",
+        "page_name": lazy_gettext("Латынкатар"),
         "page_suffix": '',
         "page": "main",
     }
@@ -52,9 +63,10 @@ def index():
 
 @app.route("/links/")
 def links():
+    page_name = lazy_gettext("Спасылкі")
     data = {
-        "page_name": "Спасылкі",
-        "page_suffix": " - Спасылкі",
+        "page_name": page_name,
+        "page_suffix": f" - {page_name}",
         "page": "links",
         "pravapis": links_data.pravapis,
         "knihi": links_data.pravapis,
@@ -64,9 +76,10 @@ def links():
 
 @app.route("/about/")
 def about():
+    page_name = lazy_gettext("Пра сайт")
     data = {
-        "page_name": "Пра сайт",
-        "page_suffix": " - Пра сайт",
+        "page_name": page_name,
+        "page_suffix": f" - {page_name}",
         "page": "about",
     }
     return render_template('about.html', data=data)

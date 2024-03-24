@@ -36,7 +36,7 @@
         <!-- Кнопка канвертацыі -->
         <div class="row row-cols-2 p-3">
             <div class="col-11">
-                <input type="button" class="btn  btn-primary btn-lg w-100" value="Канвертаваць" title="Канвертаваць" onclick="getConverted()"/>
+                <input type="button" class="btn  btn-primary btn-lg w-100" value="{{ gettext("Канвертаваць") }}" title="{{ gettext("Канвертаваць") }}" onclick="getConverted()"/>
             </div>
         </div>
         <!-- Кнопка канвертацыі -->
@@ -45,12 +45,12 @@
             <div class="input-group">
                 <div class="col-11">
                     <div class="form-floating">
-                        <textarea id="output" placeholder="Тут з'явіцца вынік лацінкаю" readonly title="Сканвертаваны тэкст" class="form-control" style="height: 200px""></textarea>
-                        <label for="output">Тут з'явіцца вынік лацінкаю</label>
+                        <textarea id="output" placeholder="{{ gettext("Тут з'явіцца вынік лацінкаю") }}" readonly title="{{ gettext("Сканвертаваны тэкст") }}" class="form-control" style="height: 200px"></textarea>
+                        <label for="output">{{ gettext("Тут з'явіцца вынік лацінкаю") }}</label>
                     </div>
                 </div>
                 <div class="col-1" >
-                    <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" title="Зкапіяваць тэкст" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
+                    <button class="btn btn-primary btn-sm" id="clipboard-copy" type="button" title="{{ gettext("Зкапіяваць тэкст") }}" data-clipboard-target="#output"><i class="fa fa-copy"></i></button>  
                 </div>
             </div>
         </div>
