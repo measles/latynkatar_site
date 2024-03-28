@@ -60,6 +60,13 @@ def about():
     page_suffix = f" - {page_name}"
     return render_template('about.html', page_name=page_name, page_suffix=page_suffix, active_about=ACTIVE)
 
+
+@app.route("/litary/")
+def litary():
+    page_name = "Літары"
+    page_suffix = f" - {page_name}"
+    return render_template('litary.html', page_name=page_name, page_suffix=page_suffix)
+
 @app.route("/convert", methods=["POST"]) 
 @app.route("/convert/", methods=["POST"])
 def convert():

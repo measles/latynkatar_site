@@ -1,0 +1,18 @@
+{% include 'head.j2' %}
+    {% include 'help.j2' %}
+    <div class="container">
+        <!-- Зыходны тэкст і кнопка яго ачысткі -->
+        <div class="row">
+            <div class="form-floating">
+                <textarea id="input" title="Зыходны тэкст" placeholder="Набірайце тут тэкст" class="form-control" style="height: 400px" oninput="checkLetters()"></textarea>
+                <label for="input">Набірайце тут тэкст</label>
+            </div>
+        </div>
+        <!-- Зыходны тэкст -->
+        <!-- Вынікi -->
+        <div class="row p-3">
+            <h1 id="vyniki"></h1>
+        </div>
+        <!-- Вынікi -->
+    </div>
+{% include 'tail.j2' %}

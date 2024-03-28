@@ -90,3 +90,24 @@ function showHelp(){
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(helpToast)
     toastBootstrap.show()
 }
+
+function checkLetters() {
+    const alfavit = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'і', "й",	'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ў', 'ф', 'х', 'ц', 'ч', 'ш', 'ы',  'ь', 'э', 'ю', 'я'];
+    const text = document.getElementById("input").value.toLowerCase();
+    let notFound = []
+    let message = ""
+
+
+    for (char of alfavit) {
+        if  (!text.includes(char)) {
+            notFound.push(char)
+        }
+    }
+    if (notFound.length === 0) {
+        message = "Усе літары знойдзены"
+    } else {
+        message = "Няма літар: " + notFound.toString()
+    }
+    document.getElementById("vyniki").innerHTML = message
+    console.log(message);
+}
