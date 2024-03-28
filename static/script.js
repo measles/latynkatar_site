@@ -109,5 +109,4 @@ function checkLetters() {
         message = "Няма літар: " + notFound.toString()
     }
     document.getElementById("vyniki").innerHTML = message
-    console.log(message);
 }
