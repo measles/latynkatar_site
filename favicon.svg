@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.70579999"
+     inkscape:cx="60.923776"
+     inkscape:cy="170.01984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Пласт 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:8.33333;stroke-linecap:round"
+       id="rect286"
+       width="179.36099"
+       height="175.50441"
+       x="19.517582"
+       y="12.440436"
+       ry="57.802494"
+       rx="0"
+       inkscape:export-filename="static/img/favicon_32x32.png"
+       inkscape:export-xdpi="4.5841126"
+       inkscape:export-ydpi="4.5841126" />
+    <rect
+       style="fill:#d40000;stroke:none;stroke-width:8.20752;stroke-linecap:round"
+       id="rect946"
+       width="179.52574"
+       height="60.980438"
+       x="19.581764"
+       y="71.931488"
+       ry="30.490219"
+       rx="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:93.5416px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.33854"
+       x="28.9119"
+       y="105.04981"
+       id="text1110"
+       transform="scale(0.7045391,1.4193676)"><tspan
+         id="tspan1108"
+         style="stroke-width:2.33854"
+         x="28.9119"
+         y="105.04981"
+         sodipodi:role="line">Ў ⇒ Ŭ</tspan></text>
+  </g>
+</svg>
