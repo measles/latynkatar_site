@@ -51,7 +51,7 @@ def index():
 def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
-    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, pravapis=links_data.pravapis, knihi=links_data.knihi, kniharni=links_data.kniharni)
+    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, pravapis=links_data.pravapis, knihi=links_data.knihi, kniharni=links_data.kniharni, kanviertary=links_data.kanviertary)
 
 
 @app.route("/about/")
