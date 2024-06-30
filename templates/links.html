@@ -11,7 +11,7 @@
             <div id="collapseKniharni" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in kniharni %}
+                     {% for url, description in links_data.kniharni %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
@@ -29,7 +29,7 @@
             <div id="collapseKnihi" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in knihi %}
+                     {% for url, description in links_data.knihi %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
@@ -47,7 +47,7 @@
             <div id="collapseDzieciam" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in dzieciam %}
+                     {% for url, description in links_data.dzieciam %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
@@ -65,7 +65,7 @@
             <div id="collapseSlouniki" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in pravapis %}
+                     {% for url, description in links_data.pravapis %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
@@ -83,7 +83,7 @@
             <div id="collapseKanviertary" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in kanviertary %}
+                     {% for url, description in links_data.kanviertary %}
                         <a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
