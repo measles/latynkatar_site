@@ -1,114 +1,25 @@
 {% include 'head.j2' %}
    <div class="container p-3">
       <div class="accordion" id="links">
-         <!-- Фільмы -->
+         {% for razdziel in spasylki %}
+         <!-- {{ razdziel.zagalovak }} -->
          <div class="accordion-item">
             <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilmy" aria-expanded="false" aria-controls="collapseFilmy">
-                  Фільмы па-беларуску
+               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ razdziel.nazva }}" aria-expanded="false" aria-controls="collapse{{ razdziel.nazva }}">
+                  {{ razdziel.zagalovak }}
                </button>
             </h2>
-            <div id="collapseFilmy" class="accordion-collapse collapse" data-bs-parent="#links">
+            <div id="collapse{{ razdziel.nazva }}" class="accordion-collapse collapse" data-bs-parent="#links">
                <div class="accordion-body">
                   <div class="list-group">
-                     {% for url, description in links_data.filmy %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
+                     {% for url, description in razdziel.spasylki %}<a href="{{ url }}">{{ url }} </a>{{ description }} 
                      {% endfor %}
                   </div>
                </div>
             </div>
          </div>
-         <!-- Фільмы -->
-         <!-- Анлайн бібліятэкі -->
-         <div class="accordion-item">
-            <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBiblijateki" aria-expanded="false" aria-controls="collapseBiblijateki">
-                  Анлайн бібліятэкі беларускіх кніг
-               </button>
-            </h2>
-            <div id="collapseBiblijateki" class="accordion-collapse collapse" data-bs-parent="#links">
-               <div class="accordion-body">
-                  <div class="list-group">
-                     {% for url, description in links_data.biblijateki %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
-                     {% endfor %}
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Анлайн бібліятэкі -->
-         <!-- Дзе купіць кнігі -->
-         <div class="accordion-item">
-            <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKnihi" aria-expanded="false" aria-controls="collapseKnigi">
-                  Выдавецтвы і кнігарні дзе можна купіць беларускія кнігі за мяжою
-               </button>
-            </h2>
-            <div id="collapseKnihi" class="accordion-collapse collapse" data-bs-parent="#links">
-               <div class="accordion-body">
-                  <div class="list-group">
-                     {% for url, description in links_data.knihi %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
-                     {% endfor %}
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Дзе купіць кнігі -->
-         <!-- Дзіцячыя рэсурсы -->
-         <div class="accordion-item">
-            <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDzieciam" aria-expanded="false" aria-controls="collapseDzieciam">
-                  Для дзяцей па-беларуску
-               </button>
-            </h2>
-            <div id="collapseDzieciam" class="accordion-collapse collapse" data-bs-parent="#links">
-               <div class="accordion-body">
-                  <div class="list-group">
-                     {% for url, description in links_data.dzieciam %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
-                     {% endfor %}
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Дзіцячыя рэсурсы -->
-         <!-- Слоўнікі, даведнікі, праверка правапісу -->
-         <div class="accordion-item">
-            <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSlouniki" aria-expanded="false" aria-controls="collapseSlouniki">
-                  Праверка правапісу, даведнікі, слоўнікі
-               </button>
-            </h2>
-            <div id="collapseSlouniki" class="accordion-collapse collapse" data-bs-parent="#links">
-               <div class="accordion-body">
-                  <div class="list-group">
-                     {% for url, description in links_data.pravapis %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
-                     {% endfor %}
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Слоўнікі, даведнікі, праверка правапісу -->
-         <!-- Канвертэры ў лацінку -->
-         <div class="accordion-item">
-            <h2  class="accordion-header">
-               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKanviertary" aria-expanded="false" aria-controls="collapseKanviertary">
-                  Канвертэры ў лацінку
-               </button>
-            </h2>
-            <div id="collapseKanviertary" class="accordion-collapse collapse" data-bs-parent="#links">
-               <div class="accordion-body">
-                  <div class="list-group">
-                     {% for url, description in links_data.kanviertary %}
-                        <a href="{{ url }}">{{ url }} </a>{{ description }} 
-                     {% endfor %}
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Канвертэры ў лацінку -->
+         <!-- {{ razdziel.zagalovak }} -->
+         {% endfor %}
       </div>
    </div>
 {% include 'tail.j2' %}

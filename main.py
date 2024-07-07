@@ -33,7 +33,7 @@ from flask import Flask, render_template, request
 import json
 from latynkatar import Cyr2Lat
 
-import lib.links as links_data
+from lib.links import RAZDZIEŁY
 
 ACTIVE = ' active" aria-current="page'
 
@@ -51,7 +51,7 @@ def index():
 def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
-    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, links_data=links_data)
+    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, spasylki=RAZDZIEŁY)
 
 
 @app.route("/about/")
