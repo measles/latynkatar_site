@@ -29,6 +29,16 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
+from dataclasses import dataclass
+
+
+@dataclass
+class Razdzieł:
+    nazva: str
+    zagalovak: str
+    spasylki: tuple
+
+
 pravapis = (
     ("https://languagetool.org/ ", "Цэлы камбайн па праверцы правапісу розных моў, у тым ліку беларускай. Ёсць плагіны для браўзэраў. Часта ім карыстаюся."),
     ("https://dobrapis.belsat.eu/", "Праверка правапісу ад БелСату (класічны і афіцыйны), канвертар у лацінку і спіс імёнаў. Аўтар — Зміцер Саўка."),
@@ -78,4 +88,14 @@ filmy = (
     ("https://kinakipa.site/", "Праект Кінакіпа і яго вялізная калекцыя фільмаў для ўсёй сям'і па-беларуску."),
     ("https://anibel.net/", "Вялікая калекцыя анімэ (перакладзеных голасам і тытрамі) і фільмаў па-беларуску."),
     ("https://baravik.org/","Беларускі торэнт-трэкер.")
+)
+
+
+RAZDZIEŁY = (
+    Razdzieł(nazva="Filmy", zagalovak="Фільмы па-беларуску", spasylki=filmy),
+    Razdzieł(nazva="Biblijateki", zagalovak="Анлайн бібліятэкі беларускіх кніг", spasylki=biblijateki),
+    Razdzieł(nazva="Knihi", zagalovak="Выдавецтвы і кнігарні дзе можна купіць беларускія кнігі за мяжою", spasylki=knihi),
+    Razdzieł(nazva="Dzieciam", zagalovak="Для дзяцей па-беларуску", spasylki=dzieciam),
+    Razdzieł(nazva="Slouniki", zagalovak="Праверка правапісу, даведнікі, слоўнікі", spasylki=pravapis),
+    Razdzieł(nazva="Kanviertary", zagalovak="Канвертары ў лацінку", spasylki=kanviertary)
 )

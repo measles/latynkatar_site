@@ -1,4 +1,4 @@
-{% include 'head.j2' %}
+{% include 'common/head.j2' %}
     <!-- Падключыць падзею па капіяванні ў буфер на кнопку #clipboard-copy -->
     <script>new ClipboardJS('#clipboard-copy');</script>
     <!-- Падключыць падзею па капіяванні ў буфер на кнопку #clipboard-copy -->
@@ -8,7 +8,7 @@
     <!-- Актывізаваць кнопку з даведкай -->
     <script>document.getElementById("help").hidden = false;</script>
     <!-- Актывізаваць кнопку з даведкай -->
-    {% include 'help.j2' %}
+    {% include 'index/help.j2' %}
     <div class="container">
         <!-- Зыходны тэкст і кнопка яго ачысткі -->
         <div class="row row-cols-2 p-3">
@@ -56,4 +56,4 @@
         </div>
         <!-- Выніковы тэкст -->
     </div>
-{% include 'tail.j2' %}
+{% include 'common/tail.j2' %}
