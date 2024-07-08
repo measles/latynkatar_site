@@ -35,8 +35,6 @@ from latynkatar import Cyr2Lat
 
 from lib.links import RAZDZIEŁY
 
-ACTIVE = ' active" aria-current="page'
-
 app = Flask(__name__)
 
 
@@ -44,21 +42,21 @@ app = Flask(__name__)
 def index():
     page_suffix = ''
     page_name = "Латынкатар"
-    return render_template('index.html', page_name=page_name, page_suffix=page_suffix, active_main=ACTIVE)
+    return render_template('index.html', page_name=page_name, page_suffix=page_suffix)
 
 
 @app.route("/links/")
 def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
-    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, active_links=ACTIVE, spasylki=RAZDZIEŁY)
+    return render_template('links.html', page_name=page_name, page_suffix=page_suffix, spasylki=RAZDZIEŁY)
 
 
 @app.route("/about/")
 def about():
     page_name = "Пра сайт"
     page_suffix = f" - {page_name}"
-    return render_template('about.html', page_name=page_name, page_suffix=page_suffix, active_about=ACTIVE)
+    return render_template('about.html', page_name=page_name, page_suffix=page_suffix)
 
 
 @app.route("/litary/")
