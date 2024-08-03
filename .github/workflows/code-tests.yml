@@ -12,7 +12,12 @@ jobs:
 
     steps:
       - name: Instasll dependancies
-        run: npm install --save-dev --seve-extract 'prettier@3.3.3'
+        run: |
+          npm install --save-dev --seve-extract 'prettier@3.3.3'
+          pip install black==24.8.0
 
       - name: Check if all is pretty
         run: npx prettier . --check
+
+      - name: Check if py is black
+        run: python3 -m black --check main.py lib
