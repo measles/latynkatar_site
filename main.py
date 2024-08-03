@@ -38,57 +38,64 @@ from lib.links import RAZDZIEŁY
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    page_suffix = ''
+    page_suffix = ""
     page_name = "Латынкатар"
-    return render_template('index.j2', page_name=page_name, page_suffix=page_suffix)
+    return render_template("index.j2", page_name=page_name, page_suffix=page_suffix)
 
 
 @app.route("/links/")
 def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
-    return render_template('links.j2', page_name=page_name, page_suffix=page_suffix, spasylki=RAZDZIEŁY)
+    return render_template(
+        "links.j2", page_name=page_name, page_suffix=page_suffix, spasylki=RAZDZIEŁY
+    )
 
 
 @app.route("/about/")
 def about():
     page_name = "Пра сайт"
     page_suffix = f" - {page_name}"
-    return render_template('about.j2', page_name=page_name, page_suffix=page_suffix)
+    return render_template("about.j2", page_name=page_name, page_suffix=page_suffix)
 
 
 @app.route("/litary/")
 def litary():
     page_name = "Літары"
     page_suffix = f" - {page_name}"
-    return render_template('litary.j2', page_name=page_name, page_suffix=page_suffix)
+    return render_template("litary.j2", page_name=page_name, page_suffix=page_suffix)
 
-@app.route("/convert", methods=["POST"]) 
+
+@app.route("/convert", methods=["POST"])
 @app.route("/convert/", methods=["POST"])
 def convert():
     data = request.json
     errors = []
     expected_fields = ("text", "direction", "type")
-    
-    missed_keys = [ x for x in expected_fields if x not in data.keys() ]
+
+    missed_keys = [x for x in expected_fields if x not in data.keys()]
     if missed_keys:
         errors.append(f"Missed required fields: '{', '.join(missed_keys)}'")
-        
-    unexpected_keys = [ x for x in data.keys() if x not in expected_fields ]
+
+    unexpected_keys = [x for x in data.keys() if x not in expected_fields]
     if unexpected_keys:
         errors.append(f"Unexpected fields: '{', '.join(unexpected_keys)}'")
-        
+
     if "text" in data.keys() and not isinstance(data["text"], str):
-        errors.append(f"'text' field should be a String, but was a '{(data['text'].__class__.__name__)}'")
-        
+        errors.append(
+            f"'text' field should be a String, but was a '{(data['text'].__class__.__name__)}'"
+        )
+
     if "direction" in data.keys() and not data["direction"] in ("latin"):
         errors.append(f"'direction' should be 'latin' but was '{data['direction']}'")
-        
+
     if "type" in data.keys() and not data["type"] in ("classic", "modern"):
-        errors.append(f"'type' should be either 'classic' or 'modern' but was '{data['type']}'")
-        
+        errors.append(
+            f"'type' should be either 'classic' or 'modern' but was '{data['type']}'"
+        )
+
     if errors:
         response = {
             "status": "error",
@@ -105,5 +112,5 @@ def convert():
         }
 
     response = json.dumps(response)
-    
+
     return response
