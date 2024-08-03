@@ -28,89 +28,121 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-function getConverted(){
-    let inputField = document.getElementById("input");
-    let outputField = document.getElementById("output");
-    let typeSelector = document.querySelector("input[name=type-radio]:checked");
+function getConverted() {
+  let inputField = document.getElementById("input");
+  let outputField = document.getElementById("output");
+  let typeSelector = document.querySelector("input[name=type-radio]:checked");
 
-    if (inputField.value.length > 0) {
-        let type = ""
-        if (typeSelector.id == "type-modern") {
-            type = "modern"
-        } else {
-            type = "classic"
-        }
-
-        fetch('/convert', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "text": inputField.value,
-                "direction": "latin",
-                "type": type
-            })
-        })
-        .then(response => response.json())
-        .then(response => outputField.value = response["text"])
+  if (inputField.value.length > 0) {
+    let type = "";
+    if (typeSelector.id == "type-modern") {
+      type = "modern";
     } else {
-        console.log("The input field was empty. Skipping backend request")
+      type = "classic";
     }
+
+    fetch("/convert", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        text: inputField.value,
+        direction: "latin",
+        type: type,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => (outputField.value = response["text"]));
+  } else {
+    console.log("The input field was empty. Skipping backend request");
+  }
 }
 
-function resetInput(){
-    let inputField = document.getElementById("input");
-    inputField.value = "";
+function resetInput() {
+  let inputField = document.getElementById("input");
+  inputField.value = "";
 }
 
-function keyEvent(event){
-    let modernButton = document.getElementById("type-modern");
-    let classicButton = document.getElementById("type-classic");
+function keyEvent(event) {
+  let modernButton = document.getElementById("type-modern");
+  let classicButton = document.getElementById("type-classic");
 
-    if (event.ctrlKey) {
-        if (event.key=="Enter") {
-            getConverted();
-        } else if (event.code == "Digit1") {
-            modernButton.checked = true;
-        } else if (event.code == "Digit2") {
-            classicButton.checked = true;
-        } else if (event.code == "Delete") {
-            resetInput();
-        }
+  if (event.ctrlKey) {
+    if (event.key == "Enter") {
+      getConverted();
+    } else if (event.code == "Digit1") {
+      modernButton.checked = true;
+    } else if (event.code == "Digit2") {
+      classicButton.checked = true;
+    } else if (event.code == "Delete") {
+      resetInput();
     }
-    if (event.code == "F1") {
-        showHideHelp();
-    }
+  }
+  if (event.code == "F1") {
+    showHideHelp();
+  }
 }
 
-function showHideHelp(){
-    const helpToast = document.getElementById("helpToast")
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(helpToast)
-    if (helpToast.checkVisibility()) {
-        toastBootstrap.hide()
-    } else {
-        toastBootstrap.show()
-    }
+function showHideHelp() {
+  const helpToast = document.getElementById("helpToast");
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(helpToast);
+  if (helpToast.checkVisibility()) {
+    toastBootstrap.hide();
+  } else {
+    toastBootstrap.show();
+  }
 }
 
 function checkLetters() {
-    const alfavit = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'і', "й",	'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ў', 'ф', 'х', 'ц', 'ч', 'ш', 'ы',  'ь', 'э', 'ю', 'я'];
-    const text = document.getElementById("input").value.toLowerCase();
-    let notFound = []
-    let message = ""
+  const alfavit = [
+    "а",
+    "б",
+    "в",
+    "г",
+    "д",
+    "е",
+    "ё",
+    "ж",
+    "з",
+    "і",
+    "й",
+    "к",
+    "л",
+    "м",
+    "н",
+    "о",
+    "п",
+    "р",
+    "с",
+    "т",
+    "у",
+    "ў",
+    "ф",
+    "х",
+    "ц",
+    "ч",
+    "ш",
+    "ы",
+    "ь",
+    "э",
+    "ю",
+    "я",
+  ];
+  const text = document.getElementById("input").value.toLowerCase();
+  let notFound = [];
+  let message = "";
 
-
-    for (char of alfavit) {
-        if  (!text.includes(char)) {
-            notFound.push(char)
-        }
+  for (char of alfavit) {
+    if (!text.includes(char)) {
+      notFound.push(char);
     }
-    if (notFound.length === 0) {
-        message = "Усе літары знойдзены"
-    } else {
-        message = "Няма літар: " + notFound.toString()
-    }
-    document.getElementById("vyniki").innerHTML = message
+  }
+  if (notFound.length === 0) {
+    message = "Усе літары знойдзены";
+  } else {
+    message = "Няма літар: " + notFound.toString();
+  }
+  document.getElementById("vyniki").innerHTML = message;
 }
