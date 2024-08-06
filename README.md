@@ -1,10 +1,16 @@
 # Латынкатар
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-round)](https://github.com/prettier/prettier)
-[![code style: black](https://img.shields.io/badge/code_style-black-black)](https://github.com/psf/black)
+[![code style: prettier](./img/code_style_prettier.svg)](https://github.com/prettier/prettier)
+[![code style: black](./img/code_style_black.svg)](https://github.com/psf/black)
 
 Гэтая веб-аплікацыя з анлайн канвертэрам беларускага тэксту з кірыліцы ў лацінку — невялікі ўзор ўжывання маёй бібліятэкі [latynkatar](https://pypi.org/project/latynkatar), якая даступная на PyPi пад ліцэнзіяй [LGPLv3](https://github.com/measles/latynkatar?tab=LGPL-3.0-1-ov-file). Бібліятэка робіць вельмі простую канвертацыю тэкста да сучаснай (з v, ǔ, č і š) ці класічнай (з ż, cz, sz і w) лацінкі, пакідаючы ўсё апроч кірылічных літар нязменным. Правапіс застаецца роўна такім, які быў да канвертацыі, апроч пазначэння транзітыўнай мяккасці (яна робіцца па правілах класічнага правапісу). Кірылічныя сімвалы, якім адпавядае некалькі лацінскіх сімвалаў пры трансляцыі вялікіх літар маюць вялікай толькі першую літару ў пары (Chleb, Jan), што можа быць праблемай у выпадках, калі гэта не слова з вялікай літары ці абрэвіятура, а проста нешта напісанае КАПСАМ. Бо атрымаецца ChLEB, JaN.
 
 Калі вы заўважылі памылку ў працы бібліятэкі — пакіньце, калі ласка, справаздачу пра тое што адбылося [тут](https://github.com/measles/latynkatar/issues), стварыўшы новую задачу. Там жа можна стварыць запыт на новыя функцыі.
+
+## Бэджы
+
+Бэдж Prettier узяты з афіцыйнага рэпазітара [Prettier](https://github.com/prettier/prettier). Усе правы належаць стваральнікам бэджа і/ці пакета.
+
+Бэдж Black створаны з дапамогай [Badge Generator](https://michaelcurrin.github.io/badge-generator/).
 
 ⓒAndrej Zacharevicz, 2024
