@@ -73,7 +73,7 @@ def litary():
 def convert():
     data = request.json
     errors = []
-    expected_fields = ("text", "direction", "type")
+    expected_fields = ("text", "direction", "type", "palatalization")
 
     missed_keys = [x for x in expected_fields if x not in data.keys()]
     if missed_keys:
@@ -103,9 +103,11 @@ def convert():
         }
     else:
         if data["type"] == "modern":
-            converted = Cyr2Lat.convert(data["text"])
+            converted = Cyr2Lat.convert(data["text"], miakkasc=data["palatalization"])
         else:
-            converted = Cyr2Lat.convert_classic(data["text"])
+            converted = Cyr2Lat.convert_classic(
+                data["text"], miakkasc=data["palatalization"]
+            )
         response = {
             "status": "success",
             "text": converted,
