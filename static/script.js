@@ -32,7 +32,7 @@ function getConverted() {
   let inputField = document.getElementById("input");
   let outputField = document.getElementById("output");
   let typeSelector = document.querySelector("input[name=type-radio]:checked");
-  let palatalizationSelector = document.getElementById("palatalization")
+  let palatalizationSelector = document.getElementById("palatalization");
 
   if (inputField.value.length > 0) {
     let type = "";
@@ -42,10 +42,10 @@ function getConverted() {
       type = "classic";
     }
 
-    if (palatalizationSelector.checked == true ){
+    if (palatalizationSelector.checked == true) {
       palatalization = true;
     } else {
-      palatalization = false
+      palatalization = false;
     }
 
     fetch("/convert", {
@@ -58,7 +58,7 @@ function getConverted() {
         text: inputField.value,
         direction: "latin",
         type: type,
-        palatalization: palatalization
+        palatalization: palatalization,
       }),
     })
       .then((response) => response.json())

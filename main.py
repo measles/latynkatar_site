@@ -95,7 +95,7 @@ def convert():
         errors.append(
             f"'type' should be either 'classic' or 'modern' but was '{data['type']}'"
         )
-        
+
     if errors:
         response = {
             "status": "error",
@@ -105,7 +105,9 @@ def convert():
         if data["type"] == "modern":
             converted = Cyr2Lat.convert(data["text"], miakkasc=data["palatalization"])
         else:
-            converted = Cyr2Lat.convert_classic(data["text"], miakkasc=data["palatalization"])
+            converted = Cyr2Lat.convert_classic(
+                data["text"], miakkasc=data["palatalization"]
+            )
         response = {
             "status": "success",
             "text": converted,
