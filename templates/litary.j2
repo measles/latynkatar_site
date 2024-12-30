@@ -1,14 +1,21 @@
 {% include 'common/head.j2' %}
-    {% include 'help.j2' %}
+    {% include 'index/help.j2' %}
     <div class="container">
         <!-- Зыходны тэкст і кнопка яго ачысткі -->
-        <div class="row">
-            <div class="form-floating">
-                <textarea id="input" title="Зыходны тэкст" placeholder="Набірайце тут тэкст" class="form-control" style="height: 400px" oninput="checkLetters()"></textarea>
-                <label for="input">Набірайце тут тэкст</label>
+        <div class="row row-cols-2 p-3">
+            <div class="input-group">
+                <div class="col-11">
+                    <div class="form-floating">
+                        <textarea id="input" title="Зыходны тэкст" placeholder="Устаўце сюды тэкст кірыліцаю" class="form-control" style="height: 200px" oninput="checkLetters()"></textarea>
+                        <label for="input">Устаўце сюды тэкст кірыліцаю</label>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-danger btn-sm" type="button" title="Выдаліць тэкст" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
+                </div>
             </div>
         </div>
-        <!-- Зыходны тэкст -->
+        <!-- Зыходны тэкст і кнопка яго ачысткі -->
         <!-- Вынікi -->
         <div class="row p-3">
             <h1 id="vyniki"></h1>
