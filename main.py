@@ -63,7 +63,7 @@ def about():
 
 @app.route("/litary/")
 def litary():
-    page_name = "Літары"
+    page_name = "Усе літары"
     page_suffix = f" - {page_name}"
     return render_template("litary.j2", page_name=page_name, page_suffix=page_suffix)
 

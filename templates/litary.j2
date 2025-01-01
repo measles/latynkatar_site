@@ -1,18 +1,38 @@
 {% include 'common/head.j2' %}
-    {% include 'help.j2' %}
     <div class="container">
+        <!-- Закладкі для розных маніпуляцый з тэкстам -->
+        {% include 'common/tabs.j2' %}
+        <!-- Закладкі для розных маніпуляцый з тэкстам -->
+        <!-- Апісанне -->
+        <p class="p-3">
+            Гэтая старонка — інструмент, дапамагаючы адшукаць 
+            <a href="https://be.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BD%D0%B3%D1%80%D0%B0%D0%BC%D0%B0">панграмы</a>, то бок фразы, якія 
+            змяшчаюць у сабе кожную літару алфавіта, як знакамітая 
+            "<a href="https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog">The quick brown fox jumps over the 
+            lazy dog</a>". Для таго каб пачаць падбіраць — проста пачніце ўводзіць тэкст у поле ніжэй. Пад ім будуць паказвацца літары,
+            каторых нестае да поўнага набору усіх знакаў алфавіту.
+        </p>
+        <p class="p-3">  
+            Працуе пакуль толькі з кірылічнымі беларускімі літарамі.
+        </p>
+        <!-- Апісанне -->
         <!-- Зыходны тэкст і кнопка яго ачысткі -->
-        <div class="row">
-            <div class="form-floating">
-                <textarea id="input" title="Зыходны тэкст" placeholder="Набірайце тут тэкст" class="form-control" style="height: 400px" oninput="checkLetters()"></textarea>
-                <label for="input">Набірайце тут тэкст</label>
+        <div class="row row-cols-2 p-3">
+            <div class="input-group">
+                <div class="col-11">
+                    <div class="form-floating">
+                        <textarea id="input" title="Зыходны тэкст" placeholder="Устаўце сюды тэкст кірыліцаю" class="form-control" style="height: 200px" oninput="checkLetters()"></textarea>
+                        <label for="input">Устаўце сюды тэкст кірыліцаю</label>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-danger btn-sm" type="button" title="Выдаліць тэкст" onClick="resetInput()"><i class="fa fa-trash"></i></button>  
+                </div>
             </div>
         </div>
-        <!-- Зыходны тэкст -->
+        <!-- Зыходны тэкст і кнопка яго ачысткі -->
         <!-- Вынікi -->
-        <div class="row p-3">
-            <h1 id="vyniki"></h1>
-        </div>
+        <p class="p-3" id="vyniki"></p>
         <!-- Вынікi -->
     </div>
 {% include 'common/tail.j2' %}
