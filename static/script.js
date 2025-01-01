@@ -150,7 +150,7 @@ function checkLetters() {
   if (notFound.length === 0) {
     message = "Усе літары знойдзены";
   } else {
-    message = "Няма літар: " + notFound.toString();
+    message = "Няма літар: " + notFound.toString().replaceAll(",", ", ");
   }
   document.getElementById("vyniki").innerHTML = message;
 }
