@@ -81,7 +81,7 @@ knihi = (
     ),
     (
         "https://kamunikat.shop/?v=9b7d173b068d",
-        "Книгарня выдавецтва пры фондзе Камуникат. Вельми раю!",
+        "Кнігарня выдавецтва пры фондзе Камунікат. Вельмі раю!",
     ),
 )
 
@@ -178,6 +178,29 @@ filmy = (
     ("https://baravik.org/", "Беларускі торэнт-трэкер."),
 )
 
+kniznyja_kluby = (
+    (
+        "https://t.me/bookclub_tbm",
+        "Анлайн кніжны клуб Таварыства Беларускай Мовы імя Францішка Скарыны",
+    ),
+    (
+        "https://t.me/cytalniachat",
+        "Чат кнігарні беларускай кнігі ў Вільні, маюць свой анлайн кніжны клуб.",
+    ),
+    ("https://t.me/klub_lichtaryk", '"Ліхтарык" - беларускі кніжны клуб у Варшаве'),
+    (
+        "https://t.me/wroclaw_knizhny_klub",
+        'Кніжны клуб "Уроцлаў" — беларускі кніжны клуб ва Уроцлаве',
+    ),
+    (
+        "https://t.me/KniznyklubPoznan",
+        "Кніжны клуб створаны ў рамах Беларускага размоўнага клубу ў Познані",
+    ),
+    (
+        "https://t.me/+H0yAIR9EAqk2ZWZi",
+        "Беларускі кніжны клуб у Аўстраліі. Анлайн кніжны клуб з сустрэчамі анлайн увечары па Мельбурне.",
+    ),
+)
 
 RAZDZIEŁY = (
     Razdzieł(nazva="Filmy", zagalovak="Фільмы па-беларуску", spasylki=filmy),
@@ -199,5 +222,8 @@ RAZDZIEŁY = (
     ),
     Razdzieł(
         nazva="Kanviertary", zagalovak="Канвертары ў лацінку", spasylki=kanviertary
+    ),
+    Razdzieł(
+        nazva="kniznyja_kluby", zagalovak="Кніжныя клубы", spasylki=kniznyja_kluby
     ),
 )
