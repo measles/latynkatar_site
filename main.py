@@ -103,7 +103,9 @@ def convert():
         }
     else:
         if data["type"] == "modern":
-            converted = latynkatar.convert(data["text"], miakkasc=data["palatalization"])
+            converted = latynkatar.convert(
+                data["text"], miakkasc=data["palatalization"]
+            )
         else:
             converted = latynkatar.convert_old(
                 data["text"], miakkasc=data["palatalization"]
