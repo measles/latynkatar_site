@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from flask import Flask, render_template, request
 import json
-from latynkatar import Cyr2Lat
+import latynkatar
 
 from lib.links import RAZDZIEŁY
 
@@ -91,9 +91,9 @@ def convert():
     if "direction" in data.keys() and not data["direction"] in ("latin"):
         errors.append(f"'direction' should be 'latin' but was '{data['direction']}'")
 
-    if "type" in data.keys() and not data["type"] in ("classic", "modern"):
+    if "type" in data.keys() and not data["type"] in ("old", "modern"):
         errors.append(
-            f"'type' should be either 'classic' or 'modern' but was '{data['type']}'"
+            f"'type' should be either 'old' or 'modern' but was '{data['type']}'"
         )
 
     if errors:
@@ -103,9 +103,11 @@ def convert():
         }
     else:
         if data["type"] == "modern":
-            converted = Cyr2Lat.convert(data["text"], miakkasc=data["palatalization"])
+            converted = latynkatar.convert(
+                data["text"], miakkasc=data["palatalization"]
+            )
         else:
-            converted = Cyr2Lat.convert_classic(
+            converted = latynkatar.convert_old(
                 data["text"], miakkasc=data["palatalization"]
             )
         response = {

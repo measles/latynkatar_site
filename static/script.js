@@ -39,7 +39,7 @@ function getConverted() {
     if (typeSelector.id == "type-modern") {
       type = "modern";
     } else {
-      type = "classic";
+      type = "old";
     }
 
     if (palatalizationSelector.checked == true) {
