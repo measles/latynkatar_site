@@ -61,9 +61,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- Web manifest -->
     <link rel="manifest" href="/manifest.webmanifest">
 
+    <!-- Перадпрагляд у мэсэнджэрах і на сайтах -->
     <meta property="og:title" content="Łatynkatar: Канвертар беларускай кірыліцы ў лацінку">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://latynkatar.org/static/img/og_card.png">
+    <meta property="og:image" content="{{ url_for('static', filename= '/img/icon.svg') }}">
     <meta property="og:url" content="https://latynkatar.org">
     <meta property="og:description" content="Канвертаваць беларускі тэкст з кірыліцы ў лацінку? Літэральнай адной кнопкай на гэтым сайце! А яшчэ ў нас ёсць каталог цікавых беларускіх рэсурсаў.">
 </head>
