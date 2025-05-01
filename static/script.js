@@ -75,7 +75,7 @@ function resetInput() {
 
 function keyEvent(event) {
   let modernButton = document.getElementById("type-modern");
-  let classicButton = document.getElementById("type-classic");
+  let classicButton = document.getElementById("type-old");
 
   if (event.ctrlKey) {
     if (event.key == "Enter") {
