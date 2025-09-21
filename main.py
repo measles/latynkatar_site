@@ -42,7 +42,7 @@ app = Flask(__name__)
 def index():
     page_suffix = ""
     page_name = "Латынкатар"
-    return render_template("index.j2", page_name=page_name, page_suffix=page_suffix)
+    return render_template("index.j2", page_name=page_name, page_suffix=page_suffix, debug=app.config["DEBUG"])
 
 
 @app.route("/links/")
@@ -50,7 +50,7 @@ def links():
     page_name = "Спасылкі"
     page_suffix = f" - {page_name}"
     return render_template(
-        "links.j2", page_name=page_name, page_suffix=page_suffix, spasylki=RAZDZIEŁY
+        "links.j2", page_name=page_name, page_suffix=page_suffix, spasylki=RAZDZIEŁY, debug=app.config["DEBUG"]
     )
 
 
@@ -58,14 +58,14 @@ def links():
 def about():
     page_name = "Пра сайт"
     page_suffix = f" - {page_name}"
-    return render_template("about.j2", page_name=page_name, page_suffix=page_suffix)
+    return render_template("about.j2", page_name=page_name, page_suffix=page_suffix, debug=app.config["DEBUG"])
 
 
 @app.route("/litary/")
 def litary():
     page_name = "Усе літары"
     page_suffix = f" - {page_name}"
-    return render_template("litary.j2", page_name=page_name, page_suffix=page_suffix)
+    return render_template("litary.j2", page_name=page_name, page_suffix=page_suffix, debug=app.config["DEBUG"])
 
 
 @app.route("/convert", methods=["POST"])
