@@ -209,6 +209,29 @@ kniznyja_kluby = (
         "Беларускі кніжны клуб у Аўстраліі. Анлайн кніжны клуб з сустрэчамі анлайн увечары па Мельбурне.",
     ),
 )
+szkoly = (
+    ("https://belshkola.org/", "Беларуская школа ў Варшаве."),
+    ("http://aksiarodak.tilda.ws/", "Беларуская школа ў Батумі."),
+    (
+        "https://www.shkolaravenskaga.pl/",
+        "Беларуская школа мастацтваў імя М. Равенскага ў Варшаве.",
+    ),
+    ("https://imschool.pl/school_main_by", 'Школа "Я дома" у Варшаве.'),
+    ("https://skorinosgimnazija.lt/by", "Віленская гімназія імя Францыска Скарыны."),
+    (
+        "http://bialorushajnowka.pl/",
+        "II Агульнаaдуkaцыйны Лiцэй З Дадатковым Навучаннем Беларускай Мовы Ў Гайнаўцы.",
+    ),
+    (
+        "https://trojka.szkolnastrona.pl",
+        "Базавая школа №3 з дадатковым вывучэннем беларускай мовы ім. Я. Кастыцжвіча у Бельску Падляскім",
+    ),
+    (
+        "https://sp4.edu.bialystok.pl/pl/",
+        "Базавая школа №4 ім. сібіракоў у Беластоку.",
+    ),
+)
+
 
 RAZDZIEŁY = (
     Razdzieł(nazva="Filmy", zagalovak="Фільмы па-беларуску", spasylki=filmy),
@@ -223,6 +246,11 @@ RAZDZIEŁY = (
         spasylki=knihi,
     ),
     Razdzieł(nazva="Dzieciam", zagalovak="Для дзяцей па-беларуску", spasylki=dzieciam),
+    Razdzieł(
+        nazva="Szkoły",
+        zagalovak="Беларускія школы па-за межамі Беларусі",
+        spasylki=szkoly,
+    ),
     Razdzieł(
         nazva="Slouniki",
         zagalovak="Праверка правапісу, даведнікі, слоўнікі",
