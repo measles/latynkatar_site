@@ -165,12 +165,12 @@ function restoreControlsState() {
   let palatalizationSelector = document.getElementById("palatalization");
 
   if (localStorage.getItem("type") == "old") {
-    oldButton.checked = true
+    oldButton.checked = true;
   } else {
-    modernButton.checked = true
+    modernButton.checked = true;
   }
 
-  if (localStorage.getItem("palatalization") == "true"){
+  if (localStorage.getItem("palatalization") == "true") {
     palatalizationSelector.checked = true;
   } else {
     palatalizationSelector.checked = false;
