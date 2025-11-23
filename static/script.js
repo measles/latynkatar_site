@@ -38,14 +38,18 @@ function getConverted() {
     let type = "";
     if (typeSelector.id == "type-modern") {
       type = "modern";
+      localStorage.setItem("type", "moderm");
     } else {
       type = "old";
+      localStorage.setItem("type", "old");
     }
 
     if (palatalizationSelector.checked == true) {
       palatalization = true;
+      localStorage.setItem("palatalization", "true");
     } else {
       palatalization = false;
+      localStorage.setItem("palatalization", "false");
     }
 
     fetch("/convert", {
@@ -75,7 +79,7 @@ function resetInput() {
 
 function keyEvent(event) {
   let modernButton = document.getElementById("type-modern");
-  let classicButton = document.getElementById("type-old");
+  let oldButton = document.getElementById("type-old");
 
   if (event.ctrlKey) {
     if (event.key == "Enter") {
@@ -83,7 +87,7 @@ function keyEvent(event) {
     } else if (event.code == "Digit1") {
       modernButton.checked = true;
     } else if (event.code == "Digit2") {
-      classicButton.checked = true;
+      oldButton.checked = true;
     } else if (event.code == "Delete") {
       resetInput();
     }
@@ -153,4 +157,22 @@ function checkLetters() {
     message = "Няма літар: " + notFound.toString().replaceAll(",", ", ");
   }
   document.getElementById("vyniki").innerHTML = message;
+}
+
+function restoreControlsState() {
+  let modernButton = document.getElementById("type-modern");
+  let oldButton = document.getElementById("type-old");
+  let palatalizationSelector = document.getElementById("palatalization");
+
+  if (localStorage.getItem("type") == "old") {
+    oldButton.checked = true
+  } else {
+    modernButton.checked = true
+  }
+
+  if (localStorage.getItem("palatalization") == "true"){
+    palatalizationSelector.checked = true;
+  } else {
+    palatalizationSelector.checked = false;
+  }
 }
